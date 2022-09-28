@@ -70,22 +70,6 @@ export abstract class Dish {
         this.description = description;
     }
 
-    changePrice(price: number): void {
-        this.price = price;
-    }
-
-    changeNameOfDish(nameOfDish: string): void {
-        this.nameOfDish = nameOfDish;
-    }
-
-    changeIngrediens(ingrediens: number): void {
-        this.ingrediens = ingrediens;
-    }
-
-    changeDescription(description: string): void {
-        this.description = description;
-    }
-
     abstract methodCooking(): void;
 
     protected getInformation(): string {

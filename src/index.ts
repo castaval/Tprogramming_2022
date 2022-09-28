@@ -4,14 +4,14 @@ import { Dish } from "./dish";
 
 const cake = new Cake("cake", 100);
 cake.displayInformation()
-cake.orderDish()
-cake.changePrice(200);
+cake.orderDish();
+cake.Price = 200;
 cake.displayInformation();
 cake.toString();
 
 const steak = new Steak("steak", 600, 1, "The best steak ever");
 steak.displayInformation();
-steak.changeNameOfDish("Steak!!!");
+steak.Name = "Steak!!!";
 steak.orderDish();
 steak.toString();
 
