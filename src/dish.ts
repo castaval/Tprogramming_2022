@@ -6,36 +6,84 @@ export abstract class Dish {
 
     constructor(nameOfDish: string, price: number, ingrediens?: number,  
     description?: string) {
-        this.nameOfDish = nameOfDish;
-        this.price = price;
+        this.Name = nameOfDish;
+        this.Price = price;
 
         if (ingrediens) {
-            this.ingrediens = ingrediens;
+            this.Ingrediens = ingrediens
         } else {
-            this.ingrediens = 1;
+            this.Ingrediens = 1;
         }
 
         if (description) {
-            this.description = description;
+            this.Description = description;
         } else {
-            this.description = "UNDEFINED!!!";
+            this.Description = "UNDEFINED!!!";
         }
+    }
 
-        if (this.nameOfDish.length <= 2) {
+    get Name(): string {
+        return this.nameOfDish;
+    }
+
+    set Name(name: string) {
+        if (name.length <= 2) {
             throw new Error();
         }
 
-        if (this.price == 0) {
+        this.nameOfDish = name;
+    }
+
+    get Price(): number {
+        return this.price;
+    }
+
+    set Price(price: number) {
+        if (price == 0) {
             throw new Error();
         }
 
-        if (this.ingrediens == 0) {
+        this.price = price;
+    }
+
+    get Ingrediens(): number {
+        return this.ingrediens;
+    }
+
+    set Ingrediens(ingrediens: number) {
+        if (ingrediens == 0) {
             throw new Error();
         }
 
-        if (this.description.length < 10) {
+        this.ingrediens = ingrediens;
+    }
+
+    get Description(): string {
+        return this.description;
+    }
+
+    set Description(description: string) {
+        if (description.length < 10) {
             throw new Error();
         }
+
+        this.description = description;
+    }
+
+    changePrice(price: number): void {
+        this.price = price;
+    }
+
+    changeNameOfDish(nameOfDish: string): void {
+        this.nameOfDish = nameOfDish;
+    }
+
+    changeIngrediens(ingrediens: number): void {
+        this.ingrediens = ingrediens;
+    }
+
+    changeDescription(description: string): void {
+        this.description = description;
     }
 
     abstract methodCooking(): void;
@@ -56,21 +104,5 @@ export abstract class Dish {
     orderDish(): void {
         const dish = this.getOrderDish(); 
         console.log(dish);
-    }
-
-    changePrice(price: number): void {
-        this.price = price;
-    }
-
-    changeNameOfDish(nameOfDish: string): void {
-        this.nameOfDish = nameOfDish;
-    }
-
-    changeIngrediens(ingrediens: number): void {
-        this.ingrediens = ingrediens;
-    }
-
-    changeDescription(description: string): void {
-        this.description = description;
     }
 }
