@@ -1,4 +1,4 @@
-export class Dish {
+export abstract class Dish {
     protected price: number;
     protected ingrediens: number;
     protected nameOfDish: string;
@@ -20,7 +20,25 @@ export class Dish {
         } else {
             this.description = "UNDEFINED";
         }
+
+        if (nameOfDish.length <= 2) {
+            throw new Error();
+        }
+
+        if (price == 0) {
+            throw new Error();
+        }
+
+        if (ingrediens == 0) {
+            throw new Error();
+        }
+
+        if (description.length < 10) {
+            throw new Error();
+        }
     }
+
+    abstract methodCooking(): void;
 
     protected getInformation(): string {
         return `Dish\nName: ${this.nameOfDish}\nPrice: ${this.price}\nDescription: ${this.description}\nIngrediens: ${this.ingrediens}`;
