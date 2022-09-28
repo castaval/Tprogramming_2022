@@ -1,11 +1,19 @@
+import { Cake } from "./classes/cake";
+import { Steak } from "./classes/steak";
 import { Dish } from "./dish";
 
-
-const cake = new Dish("cake", 100, 4, "This is usualy cake");
+const cake = new Cake("cake", 100);
 cake.displayInformation()
 cake.orderDish()
 cake.changePrice(200);
 cake.displayInformation();
+cake.toString();
 
-const cake2 = new Dish("cake", 400);
-cake2.displayInformation();
+const steak = new Steak("steak", 600, 1, "The best steak ever");
+steak.displayInformation();
+steak.changeNameOfDish("Steak!!!");
+steak.orderDish();
+steak.toString();
+
+const array: Dish[] = [cake, steak];
+array.forEach((value) => value.methodCooking());

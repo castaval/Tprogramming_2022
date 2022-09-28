@@ -12,28 +12,28 @@ export abstract class Dish {
         if (ingrediens) {
             this.ingrediens = ingrediens;
         } else {
-            this.ingrediens = 0;
+            this.ingrediens = 1;
         }
 
         if (description) {
             this.description = description;
         } else {
-            this.description = "UNDEFINED";
+            this.description = "UNDEFINED!!!";
         }
 
-        if (nameOfDish.length <= 2) {
+        if (this.nameOfDish.length <= 2) {
             throw new Error();
         }
 
-        if (price == 0) {
+        if (this.price == 0) {
             throw new Error();
         }
 
-        if (ingrediens == 0) {
+        if (this.ingrediens == 0) {
             throw new Error();
         }
 
-        if (description.length < 10) {
+        if (this.description.length < 10) {
             throw new Error();
         }
     }
