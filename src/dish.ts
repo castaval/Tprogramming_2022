@@ -72,7 +72,7 @@ export abstract class Dish {
 
     abstract methodCooking(): void;
 
-    protected getInformation(): string {
+    getInformation(): string {
         return `Dish\nName: ${this.nameOfDish}\nPrice: ${this.price}\nDescription: ${this.description}\nIngrediens: ${this.ingrediens}`;
     }
 
@@ -81,7 +81,7 @@ export abstract class Dish {
         console.log(information);
     }
 
-    protected getOrderDish(): string {
+    getOrderDish(): string {
         return `Your Dish is ${this.nameOfDish}`;
     }
 

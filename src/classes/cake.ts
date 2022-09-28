@@ -5,11 +5,11 @@ export class Cake extends Dish {
         super(nameOfDish, price, ingrediens, description);
     }
 
-    private getMethodCooking(): string {
+    getMethodCooking(): string {
         return `Cake is cooking!`;
     }
 
-    private getCakeInfo(): string {
+    getCakeInfo(): string {
         return `Cake (name: ${this.nameOfDish} price: ${this.price} ingrediens: ${this.ingrediens} description: ${this.description})`;
     }
 
@@ -17,7 +17,7 @@ export class Cake extends Dish {
         const cook = this.getMethodCooking();
         console.log(cook);
     }
-    
+
     toString(): void {
         const info = this.getCakeInfo();
         console.log(info);

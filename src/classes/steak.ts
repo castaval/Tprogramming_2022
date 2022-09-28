@@ -5,11 +5,11 @@ export class Steak extends Dish {
         super(nameOfDish, price, ingrediens, description);
     }
 
-    private getMethodCooking(): string {
+    getMethodCooking(): string {
         return `Steak is cooking!`;
     }
 
-    private getSteakInfo(): string {
+    getSteakInfo(): string {
         return `Steak (name: ${this.nameOfDish} price: ${this.price} ingrediens: ${this.ingrediens} description: ${this.description})`;
     }
 
